@@ -1,0 +1,1 @@
+import 'package:flutter/cupertino.dart';import '../../../../data/source/local/hive_helper.dart';class DashboardProvider extends ChangeNotifier {  String? count;  DashboardProvider() {    getBasketCount();    notifyListeners();  }  Future<void> getBasketCount() async {    count = HiveHelper.getAllProductsFromBasket().length.toString();    notifyListeners();  }}
